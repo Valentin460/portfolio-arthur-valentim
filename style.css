@@ -1,0 +1,739 @@
+/*Titre principal*/
+h1, h2, h4
+{
+	text-align: center;
+	color: black;
+}
+
+/*Photo centrée*/
+.centre{
+	padding-top: 100px;
+}
+/*Photo de profil*/
+.photo{
+	border-radius: 100%;
+}
+
+.card-body{
+    background-color: #D8D8D8;
+}
+
+/*Bouton "télécharger mon CV"*/
+.center{
+	margin: 0 auto;
+	display: block!important;
+}
+
+/*Corps de la page*/
+.corps{
+	background-image: url(image/gris.jpg);
+    background-position:center;
+    background-attachment: fixed;
+	background-size: 100%;
+}
+
+/* Description personnelle */
+.presentation{
+    padding-top: 80px;
+}
+
+.bg-presentation{
+    background-image: url("image/code.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Caroussel */
+.bg-caroussel{
+    background-image: url("image/couchersoleil.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Description*/
+
+.main-timeline {
+    position: relative
+}
+
+.main-timeline:before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: #c6c6c6;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0
+}
+
+.main-timeline .timeline {
+    margin-bottom: 40px;
+    position: relative
+}
+
+.main-timeline .timeline:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.main-timeline .icon {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+.main-timeline .icon:before,
+.main-timeline .icon:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.33s ease-out 0s
+}
+
+.main-timeline .icon:before {
+    background: #fff;
+    border: 2px solid #232323;
+    left: -3px
+}
+
+.main-timeline .icon:after {
+    border: 2px solid #c6c6c6;
+    left: 3px
+}
+
+.main-timeline .timeline:hover .icon:before {
+    left: 3px
+}
+
+.main-timeline .timeline:hover .icon:after {
+    left: -3px
+}
+
+.main-timeline .date-content {
+    width: 50%;
+    float: left;
+    margin-top: 22px;
+    position: relative
+}
+
+.main-timeline .date-content:before {
+    content: "";
+    width: 36.5%;
+    height: 2px;
+    background: #c6c6c6;
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0
+}
+
+.main-timeline .date-outer {
+    width: 125px;
+    height: 125px;
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+    z-index: 1
+}
+
+.main-timeline .date-outer:before,
+.main-timeline .date-outer:after {
+    content: "";
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.33s ease-out 0s
+}
+
+.main-timeline .date-outer:before {
+    background: #fff;
+    border: 2px solid #232323;
+    left: -6px
+}
+
+.main-timeline .date-outer:after {
+    border: 2px solid #c6c6c6;
+    left: 6px
+}
+
+.main-timeline .timeline:hover .date-outer:before {
+    left: 6px
+}
+
+.main-timeline .timeline:hover .date-outer:after {
+    left: -6px
+}
+
+.main-timeline .date {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 27%;
+    left: 0
+}
+
+.main-timeline .month {
+    font-size: 18px;
+    font-weight: 700
+}
+
+.main-timeline .year {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #232323;
+    line-height: 36px
+}
+
+.main-timeline .timeline-content {
+    width: 50%;
+    padding: 20px 0 20px 50px;
+    float: right
+}
+
+.main-timeline .title {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 0 15px 0
+}
+
+.main-timeline .description {
+    margin-bottom: 0
+}
+
+.main-timeline .timeline:nth-child(2n) .date-content {
+    float: right
+}
+
+.main-timeline .timeline:nth-child(2n) .date-content:before {
+    left: 10px
+}
+
+.main-timeline .timeline:nth-child(2n) .timeline-content {
+    padding: 20px 50px 20px 0;
+    text-align: right
+}
+
+@media only screen and (max-width: 991px) {
+    .main-timeline .date-content {
+        margin-top: 35px
+    }
+    .main-timeline .date-content:before {
+        width: 22.5%
+    }
+    .main-timeline .timeline-content {
+        padding: 10px 0 10px 30px
+    }
+    .main-timeline .title {
+        font-size: 17px
+    }
+    .main-timeline .timeline:nth-child(2n) .timeline-content {
+        padding: 10px 30px 10px 0
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .main-timeline:before {
+        margin: 0;
+        left: 7px
+    }
+    .main-timeline .timeline {
+        margin-bottom: 20px
+    }
+    .main-timeline .timeline:last-child {
+        margin-bottom: 0
+    }
+    .main-timeline .icon {
+        margin: auto 0
+    }
+    .main-timeline .date-content {
+        width: 95%;
+        float: right;
+        margin-top: 0
+    }
+    .main-timeline .date-content:before {
+        display: none
+    }
+    .main-timeline .date-outer {
+        width: 110px;
+        height: 110px
+    }
+    .main-timeline .date-outer:before,
+    .main-timeline .date-outer:after {
+        width: 110px;
+        height: 110px
+    }
+    .main-timeline .date {
+        top: 30%
+    }
+    .main-timeline .year {
+        font-size: 24px
+    }
+    .main-timeline .timeline-content,
+    .main-timeline .timeline:nth-child(2n) .timeline-content {
+        width: 95%;
+        text-align: center;
+        padding: 10px 0
+    }
+    .main-timeline .title {
+        margin-bottom: 10px
+    }
+}
+
+/* Projets */
+.projets{
+    padding-top: 5%;
+}
+
+@media only screen and (max-width: 767px) {
+    .projets{
+        padding-top: 12%;
+    }
+}
+
+/*Commentaires captures d'écran (Piscine 1 et 2)*/
+.description
+{
+	text-align: center;
+}
+
+/* Formulaire de contact */
+.contact{
+    padding-top: 5%;
+}
+.blue
+{
+    color: #0069d6;
+}
+
+.form-control
+{
+    height: 50px;
+    font-size: 18px;
+}
+
+#contact-form input[type=submit]
+{
+    margin: 40px auto 0px;
+    display: block;
+}
+
+.comments
+{
+    font-style: italic;
+    font-size: 18px;
+    color: #d82c2e;
+    height: 25px;
+}
+
+#contact-form .thank-you
+{
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.button1
+{
+    border: 1px solid #ddd;
+    background: #ffa500;
+    color: #fff;
+    width: 100%;        
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 18px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.button1:hover
+{
+    background: #333;
+    border-color: #ffa500;
+}
+
+.bg-contact{
+    background-image: url("image/styloplume.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Coodonnées de contact*/
+.coordonnees
+{
+	text-align: center;
+}
+
+/*Footer/Bas de page*/
+.container-fluid
+{
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+footer
+{
+	background-color: grey;
+	color: white;
+	text-align: center;
+	position: absolute;
+}
+
+/*Image site Wordpress*/
+.images
+{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+}
+
+.img
+{
+	display: inline-block;
+	width: 45%;
+}
+
+.sous-img
+{
+	width: 100%;
+}
+
+/*Captures d'écran du site web (Piscine 1 et 2)*/
+.captures
+{
+	width: 50%;
+}
+
+.center
+{
+    text-align: center;
+}
+/*Compétences*/
+.langage
+{
+    width: 12%;
+}
+
+.competences
+{
+	text-align: center;
+    padding-top: 5%;
+    background-image: url("image/blocnote.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Bouton permettant de remonter en haut de page*/
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s;
+  z-index: 1000;
+}
+
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+
+@media only screen and (max-width : 768px){
+    .langage{
+        width: 35%;
+    }
+    .competences{
+        display: inline-grid;
+        padding-top: 10%;
+    }
+}
+
+
+/* Effet jQuery défilement*/
+*
+{
+    margin:0;
+    padding: 0;
+}
+ul,ol
+{
+    list-style: none ;
+}
+body
+{
+    font-family: Arial, sans-serif;
+}
+header
+{
+    padding: 30px 0;
+}
+header h1
+{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Limelight', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #000;       
+}
+
+/* MAIN- MENU */
+#main-menu ul
+{
+    width: 980px;
+    height: 500px;
+    margin: 0 auto;
+    padding-top:  148px;
+}
+#main-menu ul li
+{
+    float: left;
+    width: 140px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+
+}
+.bw
+{
+    position: absolute;
+    left: 0px;
+    width: 140px;
+    height: 500px;
+    cursor: pointer;
+    background: url('image/bw-modify.png') no-repeat;
+}
+.color
+{
+    position: absolute;
+    left: 140px;
+    width: 140px;
+    height: 500px;
+    cursor: pointer;
+    background: url('image/color-modify.png') no-repeat;
+}
+#part2 div
+{
+    background-position: -140px 0px;
+}
+#part3 div
+{
+    background-position: -280px 0px;
+}
+#part4 div
+{
+    background-position: -420px 0px;
+}
+#part5 div
+{
+    background-position: -560px 0px;
+}
+.description2
+{
+    position: absolute;
+    left: 140px;
+    width: 280px;
+    height: 495px;
+    padding: 20px;
+    background: #fff;
+}
+.description2 h2
+{
+    padding-top: 20px;
+    font-size: 30px;
+    font-family: 'Limelight', sans-serif;
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+
+}
+.description2 h3
+{
+    margin-top:30px;
+    padding: 10px;
+    font-size: 26px;
+    font-family: 'Lobster', sans-serif;
+    background: #d70000;
+    color:#fff;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 5px;
+
+}
+.description2 p
+{
+    font-size: 22px;
+    font-family: 'Lobster', sans-serif;
+    color:#000;
+    text-align: center;
+}
+
+/* Formulaire de connexion */
+p.errorMessage {
+    padding: 25px 10px;
+    color: #ff0000;
+    border-radius: 3px;
+}
+
+/*--------------------------------------------------------------
+Header styles minus menu
+--------------------------------------------------------------*/
+
+.masthead {
+    background: #e74c3c;
+  	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.site-title {
+    margin: 0 0 1em;
+    padding: 1em 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (min-width: 44.44em) {
+    .site-title {
+        font-size: 2em;
+    }
+}
+    
+@media screen and (min-width: 50em) {
+    .site-title {
+        font-size: 2.5em;
+    }
+}
+
+.site-title a {
+    color: hsl(5, 45%, 95%);
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    text-decoration: underline;
+}
+
+/* Card Based Layout - Base styles */
+body {
+  background: #ecf0f1;
+  line-height: 1.4;
+}
+
+.site-title {
+	color: white;
+}
+
+.card {
+	background: white;
+	margin-bottom: 2em;	
+}
+
+.card a {
+	color: black;
+	text-decoration: none;
+}
+
+.card a:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.card-content {
+	padding: 1.4em;
+}
+
+.card-content h2 {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: normal;
+}
+
+.card-content p {
+	font-size: 95%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Flexbox styles */
+@media screen and (min-width: 90em) {  
+  .cards {
+    margin-top: -1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-bottom: 1em;
+    display: flex;
+    flex: 0 1 calc(50% - 0.5em);
+    /* width: calc(50% - 1em); */
+  }
+} /* mq 40em*/
+
+@media screen and (min-width: 40em) {
+  .cards {
+    margin-top: inherit;
+  }
+  
+  .card {
+    margin-bottom: 2em;
+    display: flex;
+    flex: 0 1 calc(33% - 0.5em);
+    /* width: calc(33% - 1em); */
+  }
+} /* mq 60em*/
+
+.bg-cards{
+    background-image: url("image/black-concrete-wall.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
