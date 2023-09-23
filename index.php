@@ -445,14 +445,6 @@
 					<div class="row" id="contact">
 						<div class="col-lg-10 col-lg-offset-1">
 							<form id="contact-form" method="POST" action="#contact" role="form">
-                                <!-- Error messages -->
-                                <?php if(!empty($response)) {?>
-                                    <div class="form-group col-12 text-center">
-                                        <div class="alert text-center <?php echo $response['status']; ?>">
-                                            <?php echo $response['captcha']; ?>
-                                        </div>
-                                    </div>
-                                <?php }?>
 								<div class="row">
 									<div class="col-md-6">
 										<label for="name">Prénom <span class="blue">*</span></label>
