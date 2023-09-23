@@ -445,6 +445,14 @@
 					<div class="row" id="contact">
 						<div class="col-lg-10 col-lg-offset-1">
 							<form id="contact-form" method="POST" action="#contact" role="form">
+                                <!-- Error messages -->
+                                <?php if(!empty($response)) {?>
+                                    <div class="form-group col-12 text-center">
+                                        <div class="alert text-center <?php echo $response['status']; ?>">
+                                            <?php echo $response['captcha']; ?>
+                                        </div>
+                                    </div>
+                                <?php }?>
 								<div class="row">
 									<div class="col-md-6">
 										<label for="name">Prénom <span class="blue">*</span></label>
@@ -491,7 +499,8 @@
 																}
 															?></p>
 									</div>
-									<div class="col-md-12">
+                                    <div class="col-md-12 g-recaptcha" data-sitekey="6LeCRUkoAAAAAH1eA_pLhiSKbdXAyyiVQ9sdXI3W"></div>
+                                    <div class="col-md-12">
 										<p class="blue"><strong>* Ces informations sont requises.</strong></p>
 									</div>
 									<div class="col-md-12">
@@ -512,7 +521,8 @@
 		<div class="coordonnees">
 			<p>Si vous le souhaitez, vous pouvez me contacter directement par mail : <span class="glyphicon glyphicon-envelope"><a href="mailto:valentin.arthur1000@gmail.com">valentin.arthur1000@gmail.com</a></span></p>
 			<p>Ou par téléphone :<span class="glyphicon glyphicon-phone"></span><a href="tel:+33605758093">+33605758093</a></p>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-	<?php
+<?php
 		include("includes/footer.php");
 	?>

@@ -42,44 +42,63 @@ function traitementFormulaire(array $informations){
 			// Vérification si les champs ont été saisis
 			if(isset($_POST['firstname'], $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['message'])){
 
-				// Vérification des champs et suppression des espaces, antislashs et convertit les caractères spéciaux en entités HTML
-				function verifyInput($var)
-				{
-					$var = trim($var);
-					$var = stripslashes($var);
-					$var = htmlspecialchars($var);
+                if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
 
-					return $var;
-				}
-				
-				// Récupération des valeurs du formulaire
-				$firstname = verifyInput($_POST['firstname']);
-				$name = verifyInput($_POST['name']);
-				$email = verifyInput($_POST['email']);
-				$phone = verifyInput($_POST['phone']);
-				$message = verifyInput($_POST['message']);
+                    // Google secret API
+                    $secretAPIkey = '6LeCRUkoAAAAAK1VsGFs-qVPSZFYJewZA6g1onOB';
 
-				// Connexion à la base de données
-				$co = connexionBdd();
+                    // reCAPTCHA response verification
+                    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secretAPIkey . '&response=' . $_POST['g-recaptcha-response']);
 
-				// Prépation de la requête afin d'inserer les valeurs en base de données
-				$query = $co->prepare("INSERT into contact(contact_firstname, contact_name, contact_email, contact_phone, contact_message) VALUES (:contact_firstname, :contact_name, :contact_email, :contact_phone, :contact_message)");
+                    // Decode JSON data
+                    $response = json_decode($verifyResponse);
+                    if($response->success) {
+                        // Vérification des champs et suppression des espaces, antislashs et convertit les caractères spéciaux en entités HTML
+                        function verifyInput($var)
+                        {
+                            $var = trim($var);
+                            $var = stripslashes($var);
+                            $var = htmlspecialchars($var);
 
-				$query->bindParam(':contact_firstname', $firstname);
-				$query->bindParam(':contact_name', $name);
-				$query->bindParam(':contact_email', $email);
-				$query->bindParam(':contact_phone', $phone);
-				$query->bindParam(':contact_message', $message);
+                            return $var;
+                        }
 
-				// Exécution de la requête
-				$query->execute();
+                        // Récupération des valeurs du formulaire
+                        $firstname = verifyInput($_POST['firstname']);
+                        $name = verifyInput($_POST['name']);
+                        $email = verifyInput($_POST['email']);
+                        $phone = verifyInput($_POST['phone']);
+                        $message = verifyInput($_POST['message']);
 
-				// Message de confirmation après l'envoie des informations en base de données
-				if($query){
-					echo "<div>
+                        // Connexion à la base de données
+                        $co = connexionBdd();
+
+                        // Prépation de la requête afin d'inserer les valeurs en base de données
+                        $query = $co->prepare("INSERT into contact(contact_firstname, contact_name, contact_email, contact_phone, contact_message) VALUES (:contact_firstname, :contact_name, :contact_email, :contact_phone, :contact_message)");
+
+                        $query->bindParam(':contact_firstname', $firstname);
+                        $query->bindParam(':contact_name', $name);
+                        $query->bindParam(':contact_email', $email);
+                        $query->bindParam(':contact_phone', $phone);
+                        $query->bindParam(':contact_message', $message);
+
+                        // Exécution de la requête
+                        $query->execute();
+
+                        // Message de confirmation après l'envoie des informations en base de données
+                        if ($query) {
+                            echo "<div>
 							<center><h3>Votre message a bien été envoyé !</h3></center>
 						</div>";
-				}
+                        }
+                    }
+
+                }
+                else {
+                    echo "<div style='margin-left: auto;margin-right: auto;display: table'>
+							<p class='comments'>Veuillez effectuer la vérification du captcha</p>
+						</div>";
+                }
 			}
 		}
 	}
