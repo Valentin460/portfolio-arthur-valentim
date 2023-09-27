@@ -9,7 +9,7 @@
 						<img class="card-img-top" src="image/Arthur.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h3 class="card-title">Développeur web junior</h3>
-							<p class="card-text">Actuellement au lycée privé Saint-Vincent à Senlis, en licence générale d'informatique, mention développement web.</p>
+							<p class="card-text">Actuellement au sein de l'ESGI à Paris, en mastère Ingénierie du Web.</p>
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-primary center bouton" data-toggle="modal" data-target="#exampleModal">Télécharger mon CV <span class="glyphicon glyphicon-download-alt"></span></button>
 							
@@ -422,6 +422,36 @@
                                 <p class="description">
                                     Symfony
                                 </p>
+                            </div>
+                        </div>
+                        <!-- end experience section-->
+                        <div class="timeline">
+                            <div class="icon"></div>
+                            <div class="date-content">
+                                <div class="date-outer">
+										<span class="date">
+											<span class="month">Février</span>
+										<span class="year">2023</span>
+										</span>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h5 class="title">React</h5>
+                            </div>
+                        </div>
+                        <!-- end experience section-->
+                        <div class="timeline">
+                            <div class="icon"></div>
+                            <div class="date-content">
+                                <div class="date-outer">
+										<span class="date">
+											<span class="month">Septembre</span>
+										<span class="year">2023</span>
+										</span>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h5 class="title">Docker</h5>
                             </div>
                         </div>
 					</div>
